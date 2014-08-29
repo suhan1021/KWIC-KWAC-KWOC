@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainViewController">
+   <center>
+      <VBox prefHeight="322.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="18.0" prefWidth="53.0" text="Results:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="outputTextArea" editable="false" prefHeight="287.0" prefWidth="480.0" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox prefHeight="178.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="37.0" prefWidth="500.0" text="            KWIC - INDEX SYSTEM" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label prefHeight="36.0" prefWidth="491.0" text="* Import a file for titles and each title starts from a new line.">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="28.0" prefWidth="480.0">
+               <children>
+                  <Button fx:id="importTitleButton" mnemonicParsing="false" onAction="#handleImportTitles" prefHeight="26.0" prefWidth="94.0" text="Import Titles">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="selectedTitleName" contentDisplay="TOP" prefHeight="25.0" prefWidth="380.0" text="No file selected">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Label prefHeight="36.0" prefWidth="491.0" text="* Import a file for 'words to ignore' and each word starts from a new line.">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox layoutX="20.0" layoutY="83.0" prefHeight="28.0" prefWidth="480.0">
+               <children>
+                  <Button fx:id="importWordButton" mnemonicParsing="false" onAction="#handleImportWords" prefHeight="26.0" prefWidth="96.0" text="Import Words">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="selectedWordName" contentDisplay="TOP" prefHeight="25.0" prefWidth="380.0" text="No file selected">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
