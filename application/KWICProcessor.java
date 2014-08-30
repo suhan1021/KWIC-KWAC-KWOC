@@ -1,16 +1,13 @@
-package application;
-
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 class KWICProcessor {
 	ArrayList<String> titles;
 	ArrayList<String> wordsToIgnore;
 	ArrayList<String> keywordsInContext;
 
-	public KWICProcessor(ArrayList<String> titles, ArrayList<String> wordsToIgnore) {
-		this.titles = titles;
-		this.wordsToIgnore = wordsToIgnore;
+	public KWICProcessor(String[] titles, String[] wordsToIgnore) {
+		this.titles = new ArrayList<String>(Arrays.asList(titles));
+		this.wordsToIgnore = new ArrayList<String>(Arrays.asList(wordsToIgnore));
 		keywordsInContext = new ArrayList<String>();
 	}
 
