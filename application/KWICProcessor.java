@@ -33,6 +33,7 @@ class KWICProcessor {
 				title = circularShift(title, first.toLowerCase());
 			} else {
 				// it is a keyword
+                title = title.substring(0, 1).toUpperCase() + title.substring(1);
 				keywordsInContext.add(title);
 				title = circularShift(title, first);
 			}
