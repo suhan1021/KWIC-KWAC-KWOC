@@ -66,8 +66,10 @@ public class MainViewController {
 	
 	public void displayOutput(ArrayList<String> output) {
 		outputTextArea.setText("");
+		StringBuilder outputString = new StringBuilder();
 		for (String line : output) {
-			outputTextArea.appendText(line + "\n");
+			outputString.append(line + "\n");
 		}
+		outputTextArea.setText(outputString.toString());
 	}
 }

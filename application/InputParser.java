@@ -18,12 +18,14 @@ public class InputParser {
 		this.file = file;
 	}
 	
-	public ArrayList<String> parseInput() {
+	public ArrayList<String> parseInput(boolean toLowerCase) {
 		try {
 			array = new ArrayList<>();
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String line = reader.readLine();
 			while (line != null) {
+				line = (toLowerCase == true) ? line.toLowerCase() : line;
+				line.replaceAll("\\s+", " ").trim();
 				array.add(line);
 				line = reader.readLine();
 			}

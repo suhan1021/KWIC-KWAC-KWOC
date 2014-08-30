@@ -15,39 +15,47 @@ class KWICProcessor {
 	}
 
 	public ArrayList<String> getKeyWordsInContext() {
-		Collections.sort(wordsToIgnore);
 		findAllKeywords();
+		alphabetizeIndex(keywordsInContext);
 		return keywordsInContext;
 	}
 
 	private void findAllKeywords() {
-		// find all keywords in the give list of titles.
 		for (int i = 0; i < titles.size(); i++) {
 			findKeywordsInOneTitle(titles.get(i));
 		}
 	}
 
 	private void findKeywordsInOneTitle(String title) {
-		// find all keywords in one tile and store in output list.
-		int index = 0;
 		int length = title.split(" ").length;
-		String rest;
-
 		for (int i = 0; i < length; i++) {
 			String first = title.split(" ")[0];
-			rest = title.substring(title.indexOf(" ")).trim();
-			index = Collections
-					.binarySearch(wordsToIgnore, first.toLowerCase());
-			if (index >= 0
-					&& wordsToIgnore.get(index).equals(first.toLowerCase())) {
+			int index = wordsToIgnore.indexOf(first.toLowerCase());
+			if (index >= 0) {
 				// it is a word to be ignored
-				title = rest + " " + first.toLowerCase(); 
+				title = circularShift(title, first.toLowerCase());
 			} else {
 				// it is a keyword
-				int pos = Collections.binarySearch(keywordsInContext, title);
-				keywordsInContext.add(-pos - 1, title);
-				title = rest + " " + first;
+				keywordsInContext.add(Character.toUpperCase(title.charAt(0)) + title.substring(1));
+				title = circularShift(title, first);
 			}
+			System.out.println(title);
 		}
+	}
+
+	private String circularShift(String title, String first) {
+		//title contains only one word
+		if (title.indexOf(" ") == -1) {
+			return title;
+		} else {
+			String rest = title.substring(title.indexOf(" ")).trim();
+			return rest + " " + first;
+		}
+	}
+
+	private void alphabetizeIndex(ArrayList<String> list) {
+		System.out.println("running");
+		Collections.sort(list);
+		System.out.println("sort finished");
 	}
 }

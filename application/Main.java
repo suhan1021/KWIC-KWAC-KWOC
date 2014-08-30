@@ -54,13 +54,13 @@ public class Main extends Application {
 	
 	public void setTitleFile(File file) {
 		InputParser parser = new InputParser(file);
-		titles = parser.parseInput();
+		titles = parser.parseInput(false);
 		readyToProcess();
 	}
 	
 	public void setWordsFile(File file) {
 		InputParser parser = new InputParser(file);
-		wordsToIgnore = parser.parseInput();
+		wordsToIgnore = parser.parseInput(true);
 		readyToProcess();
 	}
 	

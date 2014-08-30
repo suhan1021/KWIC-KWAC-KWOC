@@ -21,7 +21,7 @@
                   <Insets bottom="5.0" left="10.0" />
                </VBox.margin>
             </Label>
-            <TextArea fx:id="outputTextArea" editable="false" prefHeight="287.0" prefWidth="480.0" wrapText="true">
+            <TextArea fx:id="outputTextArea" cache="true" cacheHint="SPEED" depthTest="DISABLE" editable="false" focusTraversable="false" prefHeight="287.0" prefWidth="480.0" wrapText="true">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" />
                </VBox.margin>
