@@ -1,13 +1,16 @@
-import java.util.*;
+package application;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 class KWICProcessor {
 	ArrayList<String> titles;
 	ArrayList<String> wordsToIgnore;
 	ArrayList<String> keywordsInContext;
 
-	public KWICProcessor(String[] titles, String[] wordsToIgnore) {
-		this.titles = new ArrayList<String>(Arrays.asList(titles));
-		this.wordsToIgnore = new ArrayList<String>(Arrays.asList(wordsToIgnore));
+	public KWICProcessor(ArrayList<String> titles, ArrayList<String> wordsToIgnore) {
+		this.titles = titles;
+		this.wordsToIgnore = wordsToIgnore;
 		keywordsInContext = new ArrayList<String>();
 	}
 
@@ -36,7 +39,6 @@ class KWICProcessor {
 				keywordsInContext.add(Character.toUpperCase(title.charAt(0)) + title.substring(1));
 				title = circularShift(title, first);
 			}
-			System.out.println(title);
 		}
 	}
 
@@ -51,8 +53,6 @@ class KWICProcessor {
 	}
 
 	private void alphabetizeIndex(ArrayList<String> list) {
-		System.out.println("running");
 		Collections.sort(list);
-		System.out.println("sort finished");
 	}
 }
