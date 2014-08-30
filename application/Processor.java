@@ -3,12 +3,12 @@ package application;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class KWICProcessor {
+class Processor {
 	ArrayList<String> titles;
 	ArrayList<String> wordsToIgnore;
 	ArrayList<String> keywordsInContext;
 
-	public KWICProcessor(ArrayList<String> titles, ArrayList<String> wordsToIgnore) {
+	public Processor(ArrayList<String> titles, ArrayList<String> wordsToIgnore) {
 		this.titles = titles;
 		this.wordsToIgnore = wordsToIgnore;
 		keywordsInContext = new ArrayList<String>();

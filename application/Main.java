@@ -66,7 +66,7 @@ public class Main extends Application {
 	
 	private void readyToProcess() {
 		if (titles != null && !titles.isEmpty() && wordsToIgnore != null && !wordsToIgnore.isEmpty()) {
-			KWICProcessor processor = new KWICProcessor(titles, wordsToIgnore);
+			Processor processor = new Processor(titles, wordsToIgnore);
 			ArrayList<String> output = processor.getKeyWordsInContext();
 			controller.displayOutput(output);
 		}
